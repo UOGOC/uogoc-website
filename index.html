@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UOGOC — Unified Operations Group | Cyber Intelligence & Cross-Border Investigations</title>
+<meta name="description" content="UOGOC is a Toronto-based boutique consultancy specialising in cyber intelligence, digital forensics, and cross-border investigation support. Principal Consultant Umair Ali advises legal counsel and private clients on cases involving institutional misconduct, state-affiliated threat actors, and multi-jurisdictional digital crime.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="UOGOC — Unified Operations Group">
+<meta property="og:description" content="Cyber intelligence and cross-border investigation consulting. Toronto, Canada. Est. 2022.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.uogoc.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#07080a;
+  --surface:#0e0f12;
+  --border:#1e2028;
+  --gold:#b8955a;
+  --gold-light:#d4af7a;
+  --gold-dim:#7a5e32;
+  --white:#e8e6e0;
+  --muted:#888480;
+  --faint:#3a3830;
+  --red:#8b2020;
+  --red-dim:#3a0a0a;
+  --red-bright:#c03030;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;font-weight:300;font-size:16px;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 4rem;border-bottom:1px solid var(--border);background:rgba(7,8,10,0.96);backdrop-filter:blur(12px)}
+.nav-logo{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.18em;color:var(--gold)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-ia{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;border:1px solid var(--red);color:var(--red-bright);padding:0.45rem 1rem;transition:all 0.2s}
+.nav-ia:hover{background:var(--red);color:var(--white)}
+.nav-cta{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;border:1px solid var(--gold-dim);color:var(--gold);padding:0.45rem 1rem;transition:all 0.2s}
+.nav-cta:hover{background:var(--gold);color:var(--black)}
+
+/* INSTITUTIONAL ACCOUNTABILITY BANNER */
+.ia-banner{background:var(--red-dim);border-bottom:1px solid var(--red);padding:0.7rem 4rem;display:flex;align-items:center;justify-content:space-between;margin-top:80px}
+.ia-banner-text{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--red-bright)}
+.ia-banner-text span{color:var(--white);margin-left:0.8rem}
+.ia-banner-link{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red-bright);border-bottom:1px solid var(--red);padding-bottom:1px;transition:color 0.2s}
+.ia-banner-link:hover{color:var(--white)}
+
+/* HERO */
+.hero{min-height:calc(100vh - 120px);display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(184,149,90,0.04) 0%,transparent 70%);pointer-events:none}
+.hero-left{padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border)}
+.hero-tag{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;display:flex;align-items:center;gap:0.8rem}
+.hero-tag::before{content:'';display:inline-block;width:32px;height:1px;background:var(--gold)}
+h1.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,5.5rem);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:0.5rem}
+h1.hero-title em{font-style:italic;color:var(--gold-light)}
+.hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.6vw,1.5rem);font-weight:300;font-style:italic;color:var(--muted);margin-bottom:2.5rem;line-height:1.4}
+.hero-desc{font-size:14px;color:var(--muted);max-width:440px;line-height:1.9;margin-bottom:1.2rem;border-left:2px solid var(--gold-dim);padding-left:1.2rem}
+.hero-meta{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--faint);margin-bottom:2.5rem;line-height:1.8}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;background:var(--gold);color:var(--black);padding:0.85rem 2rem;transition:all 0.2s}
+.btn-primary:hover{background:var(--gold-light)}
+.btn-ia{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;background:var(--red-dim);border:1px solid var(--red);color:var(--red-bright);padding:0.85rem 2rem;transition:all 0.2s}
+.btn-ia:hover{background:var(--red);color:var(--white)}
+.btn-secondary{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;border:1px solid var(--faint);color:var(--muted);padding:0.85rem 2rem;transition:all 0.2s}
+.btn-secondary:hover{border-color:var(--gold-dim);color:var(--white)}
+
+.hero-right{padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center}
+.practice-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.2rem}
+.practice-list{display:flex;flex-direction:column;border:1px solid var(--border);margin-bottom:2rem}
+.practice-item{display:flex;align-items:center;justify-content:space-between;padding:0.9rem 1.2rem;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted);transition:background 0.2s}
+.practice-item:last-child{border-bottom:none}
+.practice-item:hover{background:var(--surface);color:var(--white)}
+.practice-item.ia-item{color:var(--red-bright);border-left:2px solid var(--red)}
+.practice-item.ia-item:hover{background:var(--red-dim)}
+.practice-code{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;color:var(--gold-dim)}
+.practice-code.ia-code{color:var(--red)}
+.framework-block{padding:1.2rem;border:1px solid var(--border);border-left:2px solid var(--gold-dim)}
+.framework-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:0.8rem}
+.framework-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.f-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;border:1px solid var(--faint);color:var(--muted);padding:0.25rem 0.6rem}
+.f-tag.peca{border-color:var(--red);color:var(--red-bright)}
+
+/* INSTITUTIONAL ACCOUNTABILITY SECTION */
+.ia-section{background:var(--red-dim);border-top:1px solid var(--red);border-bottom:1px solid var(--red);padding:5rem 4rem}
+.ia-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:3rem;gap:2rem}
+.ia-title-block{flex:1}
+.ia-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--red-bright);margin-bottom:1rem;display:flex;align-items:center;gap:0.8rem}
+.ia-eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:var(--red-bright)}
+.ia-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3.5rem);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:0.8rem}
+.ia-title em{font-style:italic;color:#e07070}
+.ia-desc{font-size:14px;color:var(--muted);line-height:1.85;max-width:500px}
+.ia-statement{flex:0 0 340px;padding:1.5rem;border:1px solid var(--red);border-left:3px solid var(--red-bright)}
+.ia-statement-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--red-bright);margin-bottom:0.8rem}
+.ia-statement-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--muted);line-height:1.7}
+.ia-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(139,32,32,0.3);border:1px solid var(--red);margin-bottom:3rem}
+.ia-card{background:var(--red-dim);padding:1.8rem 1.5rem;border-bottom:2px solid transparent;transition:border-color 0.25s,background 0.25s}
+.ia-card:hover{background:rgba(139,32,32,0.25);border-bottom-color:var(--red-bright)}
+.ia-card-num{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;color:var(--red);margin-bottom:1rem}
+.ia-card-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--white);margin-bottom:0.7rem;line-height:1.2}
+.ia-card-desc{font-size:12px;color:var(--muted);line-height:1.7}
+.ia-actors{padding:2rem;border:1px solid var(--red);margin-bottom:2rem}
+.ia-actors-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--red-bright);margin-bottom:1.2rem}
+.ia-actors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.ia-actor-item{display:flex;align-items:flex-start;gap:0.7rem;font-size:12px;color:var(--muted);line-height:1.5}
+.ia-actor-dot{width:4px;height:4px;background:var(--red-bright);flex-shrink:0;margin-top:5px}
+.ia-actor-text strong{display:block;color:var(--white);font-weight:400;margin-bottom:0.15rem;font-size:13px}
+.ia-footer-row{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.ia-legal-note{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:var(--faint);line-height:1.7;max-width:520px}
+.ia-engage-btn{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;background:transparent;border:1px solid var(--red-bright);color:var(--red-bright);padding:0.85rem 2.5rem;transition:all 0.2s;flex-shrink:0;cursor:pointer}
+.ia-engage-btn:hover{background:var(--red-bright);color:var(--white)}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:1fr 2fr;border-bottom:1px solid var(--border)}
+.about-label{padding:5rem 4rem;border-right:1px solid var(--border);display:flex;align-items:flex-start}
+.section-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);writing-mode:vertical-rl;transform:rotate(180deg)}
+.about-content{padding:5rem 4rem}
+.about-name{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.1;margin-bottom:0.4rem}
+.about-role{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:2.5rem}
+.about-body{font-size:14px;color:var(--muted);line-height:1.95;max-width:630px;margin-bottom:2rem}
+.about-body p{margin-bottom:1.2rem}
+.about-body p:last-child{margin-bottom:0}
+.about-body strong{color:var(--white);font-weight:400}
+.academic-block{padding:1.3rem;border:1px solid var(--border);border-left:2px solid var(--gold);margin-bottom:2rem}
+.academic-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:0.6rem}
+.academic-text{font-size:13px;color:var(--muted);line-height:1.7}
+.scope-box{padding:1.3rem;border:1px solid var(--border);border-left:2px solid var(--gold-dim);margin-bottom:2rem}
+.scope-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:0.6rem}
+.scope-text{font-size:13px;color:var(--muted);line-height:1.7}
+.qual-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)}
+.qual-cell{background:var(--black);padding:1.2rem 1.5rem}
+.qual-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:0.5rem}
+.qual-text{font-size:12px;color:var(--muted);line-height:1.55}
+.qual-text strong{color:var(--white);font-weight:400;display:block;margin-bottom:0.2rem}
+
+/* SERVICES */
+.services{padding:5rem 4rem;border-bottom:1px solid var(--border)}
+.services-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;border-bottom:1px solid var(--border);padding-bottom:2rem}
+.services-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,3rem);font-weight:300;line-height:1.1}
+.services-title em{font-style:italic;color:var(--gold-light)}
+.services-note{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--gold-dim);text-align:right;line-height:1.6}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.service-card{background:var(--black);padding:2rem 1.8rem;position:relative;overflow:hidden;transition:background 0.25s}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.service-card:hover{background:var(--surface)}
+.service-card:hover::after{transform:scaleX(1)}
+.service-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;color:var(--gold-dim);margin-bottom:1rem}
+.service-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--white);margin-bottom:0.7rem;line-height:1.2}
+.service-desc{font-size:12px;color:var(--muted);line-height:1.75;margin-bottom:0.8rem}
+.service-method{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;color:var(--gold-dim);border-top:1px solid var(--border);padding-top:0.7rem;line-height:1.6}
+
+/* ENGAGEMENTS */
+.engagements{border-bottom:1px solid var(--border);padding:5rem 4rem}
+.eng-header{margin-bottom:3rem}
+.eng-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,2.5vw,2.5rem);font-weight:300;line-height:1.2;margin-bottom:0.6rem}
+.eng-title em{font-style:italic;color:var(--gold-light)}
+.eng-note{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--muted)}
+.eng-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.eng-card{background:var(--black);padding:2rem 1.8rem;border-bottom:2px solid transparent;transition:border-color 0.25s,background 0.25s}
+.eng-card:hover{background:var(--surface);border-bottom-color:var(--gold-dim)}
+.eng-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.8rem}
+.eng-id{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.16em;color:var(--gold-dim)}
+.eng-status{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;padding:0.2rem 0.5rem;border:1px solid}
+.status-closed{color:#7aaa7a;border-color:#2a4a2a}
+.status-ongoing{color:var(--gold);border-color:var(--gold-dim)}
+.eng-jur{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:var(--faint);margin-bottom:0.8rem}
+.eng-summary{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:1rem}
+.eng-tags{display:flex;flex-wrap:wrap;gap:0.3rem}
+.eng-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;border:1px solid var(--faint);color:var(--faint);padding:0.2rem 0.5rem}
+
+/* EXPERTISE */
+.expertise{display:grid;grid-template-columns:2fr 1fr;border-bottom:1px solid var(--border)}
+.expertise-left{padding:5rem 4rem;border-right:1px solid var(--border)}
+.expertise-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,2.5vw,2.5rem);font-weight:300;margin-bottom:2.5rem;line-height:1.2}
+.expertise-title em{font-style:italic;color:var(--gold-light)}
+.threat-list{display:flex;flex-direction:column;border:1px solid var(--border)}
+.threat-item{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.4rem;border-bottom:1px solid var(--border);transition:background 0.2s;gap:1rem}
+.threat-item:last-child{border-bottom:none}
+.threat-item:hover{background:var(--surface)}
+.threat-left{display:flex;flex-direction:column}
+.threat-name{font-size:13px;color:var(--white);font-weight:400}
+.threat-sub{font-size:11px;color:var(--muted);margin-top:0.1rem}
+.threat-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.55rem;border:1px solid;flex-shrink:0}
+.tag-critical{color:#c05050;border-color:#4a1a1a}
+.tag-high{color:#b8882a;border-color:#4a3010}
+.tag-active{color:var(--gold);border-color:var(--gold-dim)}
+
+.expertise-right{padding:5rem 3rem}
+.er-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.4rem}
+.geo-list{display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2rem}
+.geo-item{display:flex;align-items:center;gap:0.8rem;font-size:13px;color:var(--muted)}
+.geo-dot{width:5px;height:5px;background:var(--gold-dim);flex-shrink:0}
+.method-box{padding:1.3rem;border:1px solid var(--border);border-left:2px solid var(--gold-dim);margin-bottom:1.2rem}
+.method-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:0.8rem}
+.method-list{display:flex;flex-direction:column;gap:0.35rem}
+.method-item{font-size:12px;color:var(--muted)}
+.method-item.peca{color:var(--red-bright)}
+
+/* CONTACT */
+.contact{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
+.contact-left{padding:5rem 4rem;border-right:1px solid var(--border)}
+.contact-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,3rem);font-weight:300;line-height:1.1;margin-bottom:1.2rem}
+.contact-title em{font-style:italic;color:var(--gold-light)}
+.contact-desc{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:2rem;max-width:380px}
+.contact-rows{display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem}
+.contact-row{display:flex;align-items:center;gap:1rem;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;color:var(--muted);padding:0.9rem 1.1rem;border:1px solid var(--border);transition:all 0.2s}
+.contact-row:hover{border-color:var(--gold-dim);color:var(--white)}
+.c-icon{color:var(--gold);width:16px;text-align:center;font-size:13px}
+.contact-disclaimer{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;color:var(--faint);line-height:1.7;padding-top:1.2rem;border-top:1px solid var(--border)}
+
+.contact-right{padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center}
+.intake-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem}
+.intake-steps{display:flex;flex-direction:column}
+.intake-step{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem 0;border-bottom:1px solid var(--border)}
+.intake-step:last-child{border-bottom:none}
+.step-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--gold-dim);flex-shrink:0;margin-top:2px}
+.step-body{display:flex;flex-direction:column;gap:0.2rem}
+.step-title{font-size:13px;color:var(--white);font-weight:400}
+.step-detail{font-size:12px;color:var(--muted);line-height:1.65}
+.retainer-note{margin-top:2rem;padding:1.2rem;border:1px solid var(--border)}
+.retainer-note strong{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);display:block;margin-bottom:0.5rem}
+.retainer-note p{font-size:12px;color:var(--muted);line-height:1.65}
+
+/* FOOTER */
+footer{padding:2rem 4rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem}
+.footer-left{display:flex;flex-direction:column;gap:0.3rem}
+.footer-logo{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.18em;color:var(--gold-dim)}
+.footer-reg{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;color:var(--faint)}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint);transition:color 0.2s}
+.footer-links a:hover{color:var(--muted)}
+.footer-right{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;color:var(--faint);text-align:right;line-height:1.7}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero-left>*{animation:fadeUp 0.7s ease both}
+.hero-tag{animation-delay:0.1s}.hero-title{animation-delay:0.2s}.hero-subtitle{animation-delay:0.3s}.hero-desc{animation-delay:0.4s}.hero-meta{animation-delay:0.45s}.hero-cta{animation-delay:0.5s}
+
+@media(max-width:1100px){.services-grid{grid-template-columns:repeat(2,1fr)}.ia-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}.nav-links{display:none}
+  .ia-banner{padding:0.7rem 1.5rem}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:4rem 1.5rem 2.5rem;border-right:none;border-bottom:1px solid var(--border)}
+  .hero-right{padding:2.5rem 1.5rem}
+  .ia-section{padding:3rem 1.5rem}
+  .ia-header{flex-direction:column}
+  .ia-statement{flex:none;width:100%}
+  .ia-grid{grid-template-columns:1fr}
+  .ia-actors-grid{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr}.about-label{display:none}.about-content{padding:3rem 1.5rem}
+  .qual-grid{grid-template-columns:1fr}
+  .services{padding:3rem 1.5rem}.services-grid{grid-template-columns:1fr}
+  .engagements{padding:3rem 1.5rem}.eng-grid{grid-template-columns:1fr}
+  .expertise{grid-template-columns:1fr}.expertise-left{padding:3rem 1.5rem;border-right:none;border-bottom:1px solid var(--border)}.expertise-right{padding:2.5rem 1.5rem}
+  .contact{grid-template-columns:1fr}.contact-left{padding:3rem 1.5rem;border-right:none;border-bottom:1px solid var(--border)}.contact-right{padding:2.5rem 1.5rem}
+  footer{padding:1.5rem;flex-direction:column;text-align:center}.footer-right{text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">UOGOC</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#engagements">Engagements</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#ia-section" class="nav-ia">Institutional Accountability</a>
+    <a href="#contact" class="nav-cta">Engage</a>
+  </div>
+</nav>
+
+<!-- ALERT BANNER -->
+<div class="ia-banner">
+  <div class="ia-banner-text">Active Practice Area: <span>Institutional Accountability Investigations — Law Enforcement Misconduct · Politically Protected Networks · Cross-Border Coercion</span></div>
+  <a href="#ia-section" class="ia-banner-link">Learn More →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Toronto, Canada · Est. 2022</div>
+    <h1 class="hero-title">Unified<br>Operations<br><em>Group</em></h1>
+    <p class="hero-subtitle">Organized Crime & Cybersecurity Consulting</p>
+    <p class="hero-desc">UOGOC is a boutique consultancy providing cyber intelligence, digital forensics, and cross-border investigation support to legal counsel and private clients. We focus on cases requiring simultaneous engagement across multiple legal systems — including cases where institutional actors are themselves the threat.</p>
+    <p class="hero-meta">Registered Ontario business · All engagements under NDA<br>Retainer-based practice · Not a law firm · Referral preferred</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Request Consultation</a>
+      <a href="#ia-section" class="btn-ia">Institutional Accountability</a>
+      <a href="#services" class="btn-secondary">Practice Areas</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="practice-label">Practice Areas</div>
+    <div class="practice-list">
+      <div class="practice-item"><span>Digital Forensics & Evidence Assembly</span><span class="practice-code">DFA</span></div>
+      <div class="practice-item"><span>OS & File Structure Forensics</span><span class="practice-code">OFSF</span></div>
+      <div class="practice-item"><span>Cross-Border Threat Intelligence</span><span class="practice-code">CBTI</span></div>
+      <div class="practice-item"><span>Cloud, Mobile & IoT Forensics</span><span class="practice-code">CMIF</span></div>
+      <div class="practice-item"><span>AI-Assisted Digital Investigation</span><span class="practice-code">AADI</span></div>
+      <div class="practice-item"><span>OSINT & Network Attribution</span><span class="practice-code">OSINT</span></div>
+      <div class="practice-item"><span>Legal Technical Advisory</span><span class="practice-code">LTA</span></div>
+      <div class="practice-item ia-item"><span>Institutional Accountability Investigations</span><span class="practice-code ia-code">IAI</span></div>
+    </div>
+    <div class="framework-block">
+      <div class="framework-label">Operational Frameworks & Legal Standards</div>
+      <div class="framework-tags">
+        <span class="f-tag">MITRE ATT&CK</span>
+        <span class="f-tag">NIST CSF</span>
+        <span class="f-tag">OSINT Framework</span>
+        <span class="f-tag">ISO/IEC 27037</span>
+        <span class="f-tag">FATF Guidelines</span>
+        <span class="f-tag">Interpol I-24/7</span>
+        <span class="f-tag peca">PECA 2016 / 2025</span>
+        <span class="f-tag">FIA Act 1974</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTITUTIONAL ACCOUNTABILITY -->
+<section class="ia-section" id="ia-section">
+  <div class="ia-header">
+    <div class="ia-title-block">
+      <div class="ia-eyebrow">Specialized Practice Area</div>
+      <h2 class="ia-title">Institutional<br><em>Accountability</em><br>Investigations</h2>
+      <p class="ia-desc">When the individuals who hold institutional authority — law enforcement officers, judicial actors, politically connected networks — are themselves conducting the misconduct, standard legal and cybersecurity channels cannot be used. UOGOC specializes in precisely these cases: building documented, internationally submittable evidence packages when domestic remedies have been deliberately suppressed.</p>
+    </div>
+    <div class="ia-statement">
+      <div class="ia-statement-label">Operating Principle</div>
+      <div class="ia-statement-text">"When an active law enforcement officer is the perpetrator, the local complaint mechanism he controls is not a remedy. The remedy is documentation — precise, multi-jurisdictional, and delivered to the bodies above his reach."</div>
+    </div>
+  </div>
+
+  <div class="ia-grid">
+    <div class="ia-card">
+      <div class="ia-card-num">IAI — 01</div>
+      <div class="ia-card-title">Law Enforcement Misconduct Documentation</div>
+      <div class="ia-card-desc">Systematic evidence assembly of unlawful acts committed by active police or law enforcement officers — including raids conducted without authority, illegal detention, coercion of witnesses, and abuse of official position to obstruct civil proceedings. Structured for submission to Provincial Police Complaints Authorities, IGP-level oversight, and international human rights bodies.</div>
+    </div>
+    <div class="ia-card">
+      <div class="ia-card-num">IAI — 02</div>
+      <div class="ia-card-title">Cross-Border Coercion & Witness Intimidation</div>
+      <div class="ia-card-desc">Documentation of coordinated intimidation campaigns targeting individuals, family members, and witnesses across international borders. Covers WhatsApp and digital threat records, physical harassment timelines, false FIR analysis, and coerced document signing under duress — assembled for Canadian federal agency submission including RCMP and Global Affairs Canada.</div>
+    </div>
+    <div class="ia-card">
+      <div class="ia-card-num">IAI — 03</div>
+      <div class="ia-card-title">False Instrument & FIR Manipulation Analysis</div>
+      <div class="ia-card-desc">Forensic analysis and documentation of fabricated legal instruments — including falsified FIRs, fraudulent court filings, and forged declarations. Includes timeline reconstruction, digital metadata analysis of document origins, and structured legal challenge support for counsel. PECA 2016 Section 26-A (false information dissemination) implications documented where applicable.</div>
+    </div>
+    <div class="ia-card">
+      <div class="ia-card-num">IAI — 04</div>
+      <div class="ia-card-title">Suppressed Remedies & International Escalation</div>
+      <div class="ia-card-desc">When local complaint mechanisms are controlled or blocked by the same actors under investigation, international escalation becomes the only viable path. UOGOC documents the unavailability of local remedies and builds the case for engagement with RCMP Federal Serious and Organized Crime, Global Affairs Canada Consular Division, FIA Pakistan Anti-Corruption Wing, and relevant human rights oversight bodies.</div>
+    </div>
+  </div>
+
+  <div class="ia-actors">
+    <div class="ia-actors-label">Actor Categories This Practice Area Covers</div>
+    <div class="ia-actors-grid">
+      <div class="ia-actor-item">
+        <div class="ia-actor-dot"></div>
+        <div class="ia-actor-text"><strong>Active Law Enforcement Officers</strong>Sindh Police, Punjab Police, Federal LEAs conducting unlawful acts under colour of authority</div>
+      </div>
+      <div class="ia-actor-item">
+        <div class="ia-actor-dot"></div>
+        <div class="ia-actor-text"><strong>Arms-Affiliated Networks</strong>Individuals connected to weapons trade or military-adjacent infrastructure using those connections for coercive leverage</div>
+      </div>
+      <div class="ia-actor-item">
+        <div class="ia-actor-dot"></div>
+        <div class="ia-actor-text"><strong>Politically Protected Individuals</strong>Persons who exploit political connections to obstruct investigations, suppress complaints, or manipulate legal proceedings</div>
+      </div>
+      <div class="ia-actor-item">
+        <div class="ia-actor-dot"></div>
+        <div class="ia-actor-text"><strong>Judiciary-Connected Networks</strong>Advocate and court-connected actors facilitating fraudulent filings or using legal process as an instrument of harassment</div>
+      </div>
+      <div class="ia-actor-item">
+        <div class="ia-actor-dot"></div>
+        <div class="ia-actor-text"><strong>Corporate & Institutional Bad Actors</strong>Organizations using institutional resources — legal, financial, or governmental — to coerce, defraud, or intimidate individuals</div>
+      </div>
+      <div class="ia-actor-item">
+        <div class="ia-actor-dot"></div>
+        <div class="ia-actor-text"><strong>Cross-Border Proxy Networks</strong>Coordinated groups operating across Pakistan, UAE, and other jurisdictions to apply pressure on individuals in Canada or other Western countries</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ia-footer-row">
+    <div class="ia-legal-note">All Institutional Accountability engagements are conducted within the legal boundaries of Canadian federal law, Pakistani federal law (including PECA 2016 and its 2025 amendments), and applicable international frameworks. UOGOC does not conduct operations outside lawful parameters and does not engage in counter-intimidation. All work product is documentation-based, evidence-driven, and delivered to qualified legal counsel or authorized federal agencies.</div>
+    <a href="#contact" class="ia-engage-btn">Submit an Accountability Case</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-label"><span class="section-tag">About</span></div>
+  <div class="about-content">
+    <h2 class="about-name">Umair Ali</h2>
+    <div class="about-role">Principal Consultant · Cyber Intelligence & Cross-Border Investigations</div>
+    <div class="about-body">
+      <p>Umair Ali founded UOGOC in 2022 after identifying a structural gap that no existing firm was equipped to fill: cases in which <strong>digital misconduct, law enforcement abuse of authority, and civil or family court proceedings across different countries converge simultaneously</strong> — and in which the conventional response of each individual discipline is insufficient on its own.</p>
+      <p>His approach is grounded in graduate-level digital forensics training covering forensic imaging, operating system artifact analysis, chain-of-custody documentation, evidence preservation standards, and the legal-technical dimensions of cybercrime investigation under both Canadian and Pakistani law. He applies this foundation to live case environments rather than controlled settings, working directly with the evidentiary requirements of Canadian federal and provincial courts, and with the documentation standards expected by agencies including <strong>RCMP Federal Serious and Organized Crime</strong> and <strong>Global Affairs Canada Consular Division</strong>.</p>
+      <p>Mr. Ali's practice has developed through direct operational engagement across Canadian federal and provincial proceedings, Pakistani federal and Sindh provincial law enforcement structures, and consular escalation channels. He maintains working familiarity with PECA 2016 and its 2025 amendments, the FIA Act 1974, and the jurisdictional frameworks that determine when — and how — international escalation becomes the appropriate response to suppressed domestic remedies.</p>
+      <p>Engagements are not publicly discussed. Mr. Ali does not give media interviews and does not comment on cases, active or closed.</p>
+    </div>
+    <div class="academic-block">
+      <div class="academic-label">Methodological Foundation</div>
+      <div class="academic-text">Forensic practice grounded in graduate-level digital forensics methodology: evidence identification, acquisition, preservation, and analysis per ISO/IEC 27037 standards. Tools applied include FTK, EnCase, and Autopsy for imaging and artifact recovery; Maltego and structured OSINT frameworks for network intelligence; and AI-assisted pattern recognition for large-dataset investigation support. All outputs produced to court-admissible standards.</div>
+    </div>
+    <div class="scope-box">
+      <div class="scope-label">Scope Clarification</div>
+      <div class="scope-text">UOGOC is not a law firm and does not provide legal advice. We produce forensic documentation, intelligence analysis, and technical advisory for use by qualified legal counsel. We do not conduct criminal investigations and hold no law enforcement authority. All engagements begin with a mutual NDA and a defined written scope.</div>
+    </div>
+    <div class="qual-grid">
+      <div class="qual-cell">
+        <div class="qual-title">Jurisdiction Familiarity</div>
+        <div class="qual-text"><strong>Canada, Pakistan, UAE, EU</strong>Court evidentiary standards, federal agency protocols, and law enforcement structures across all four systems — including where they conflict and where international escalation applies.</div>
+      </div>
+      <div class="qual-cell">
+        <div class="qual-title">Legal Framework Knowledge</div>
+        <div class="qual-text"><strong>PECA 2016 / 2025 · FIA Act 1974 · Canadian Criminal Code</strong>Applied understanding of cybercrime legislation in both jurisdictions, including PECA provisions on false instruments, harassment, identity fraud, and coercion via digital means.</div>
+      </div>
+      <div class="qual-cell">
+        <div class="qual-title">Engagement Model</div>
+        <div class="qual-text"><strong>Retainer-based, referral-preferred</strong>No public intake. Written case summary required before initial consultation. Legal counsel referrals prioritised. Fees discussed privately during NDA phase only.</div>
+      </div>
+      <div class="qual-cell">
+        <div class="qual-title">Associate Network</div>
+        <div class="qual-text"><strong>Canada · Pakistan · UAE · UK</strong>Legal, forensic, and intelligence professionals engaged on a case-by-case basis under NDA. Activated where multi-jurisdictional simultaneous workstreams are required.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <h2 class="services-title">Practice<br><em>Areas</em></h2>
+    <div class="services-note">08 Practice Areas · Retainer-based<br>Referral preferred · All engagements under NDA</div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-name">Digital Forensics & Evidence Assembly</div>
+      <div class="service-desc">Recovery, preservation, and authentication of digital evidence for civil or criminal proceedings. Includes communications metadata analysis, file integrity verification, and chain-of-custody documentation produced to ISO/IEC 27037 and Canadian federal evidentiary standards. All evidence handled using write-blocked acquisition to prevent contamination.</div>
+      <div class="service-method">Tools: EnCase · FTK · Autopsy · Hash verification · Court-admissible reporting</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-name">OS & File Structure Forensics</div>
+      <div class="service-desc">Forensic analysis of operating system artifacts across Windows, Linux, and macOS environments. Covers registry analysis, file system forensics, deleted file recovery, timeline reconstruction from system logs, and identification of user activity patterns relevant to the investigation. Evidence extracted in formats accepted by Canadian and Pakistani courts.</div>
+      <div class="service-method">Platforms: Windows · Linux · macOS · Mobile OS artifacts</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-name">Cross-Border Threat Intelligence</div>
+      <div class="service-desc">Structured intelligence collection on threat actors operating across jurisdictions. Covers OSINT, social network analysis, digital footprint mapping, and dark web exposure monitoring. Coordinated with legal counsel to ensure evidence usability in the target court system. Does not involve unlawful surveillance or unauthorized access.</div>
+      <div class="service-method">Frameworks: OSINT Framework · MITRE ATT&CK · HUMINT corroboration</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-name">Cloud, Mobile & IoT Forensics</div>
+      <div class="service-desc">Forensic acquisition and analysis of evidence from cloud platforms, mobile devices, and IoT environments. Covers data recovery from distributed systems, mobile device artifact extraction, cloud-stored communications, and the legal complexities of cross-border data jurisdiction under PECA 2016 and Canadian federal law.</div>
+      <div class="service-method">Scope: Cloud platforms · Android/iOS · IoT device logs · Cross-border data jurisdiction</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-name">AI-Assisted Digital Investigation</div>
+      <div class="service-desc">Application of machine learning and AI tools to large-volume digital evidence sets — including anomaly detection, pattern recognition across communication logs, automated timeline construction, and identification of coordinated behaviour across multiple accounts or devices. Used to surface evidence that manual review would not efficiently identify.</div>
+      <div class="service-method">Application: Anomaly detection · Pattern analysis · Automated timeline · Coordinated network identification</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <div class="service-name">Institutional Misconduct Documentation</div>
+      <div class="service-desc">Assembly of documented evidence of misconduct by law enforcement, judicial, or corporate actors — structured for regulatory bodies, federal agencies, and courts. Includes analysis of suppressed local remedies and construction of the international escalation argument. See the Institutional Accountability section for full scope.</div>
+      <div class="service-method">Output: Regulatory complaint packages · Sworn exhibit sets · Agency referral letters</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">07</div>
+      <div class="service-name">OSINT & Network Attribution</div>
+      <div class="service-desc">Identification and mapping of individuals, organisations, and networks through open-source and lawfully accessible intelligence. Includes dark web exposure monitoring, threat actor profiling, arms and financial network tracing, and public blockchain analysis. All methods remain within the legal boundaries of the relevant jurisdiction.</div>
+      <div class="service-method">Tools: Maltego · Shodan · Public blockchain explorers · Structured OSINT methodology</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">08</div>
+      <div class="service-name">Legal Technical Advisory</div>
+      <div class="service-desc">Expert technical input for law firms requiring specialist opinion on digital evidence, cross-border data admissibility, cyber law under PECA 2016 and Canadian statute, and the forensic dimensions of multi-jurisdictional misconduct. Written expert opinion letters available for court submission. Covers both Canadian and Pakistani legal frameworks.</div>
+      <div class="service-method">Output: Expert opinion letters · Technical affidavits · PECA-aware counsel briefings</div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS -->
+<section class="engagements" id="engagements">
+  <div class="eng-header">
+    <h2 class="eng-title">Selected <em>Engagement Summaries</em></h2>
+    <p class="eng-note">All identifying details withheld under NDA. Summaries describe engagement type, jurisdictional scope, and outcome category only.</p>
+  </div>
+  <div class="eng-grid">
+    <div class="eng-card">
+      <div class="eng-meta"><span class="eng-id">REF-2022-CA-PK-01</span><span class="eng-status status-closed">Closed</span></div>
+      <div class="eng-jur">Jurisdictions: Canada (Federal, Quebec) · Pakistan (Sindh)</div>
+      <div class="eng-summary">Documentation of a coordinated harassment and coercion campaign conducted by individuals connected to active law enforcement in Pakistan, targeting a Canadian-resident client involved in Quebec family court proceedings. WhatsApp threat logs, physical intimidation timelines, and false complaint records assembled into an evidence package submitted to RCMP and Global Affairs Canada. Parallel affidavit support provided to client's Quebec legal counsel.</div>
+      <div class="eng-tags"><span class="eng-tag">State-Affiliated</span><span class="eng-tag">Family Court</span><span class="eng-tag">Forensic Documentation</span><span class="eng-tag">RCMP Referral</span></div>
+    </div>
+    <div class="eng-card">
+      <div class="eng-meta"><span class="eng-id">REF-2023-PK-UAE-04</span><span class="eng-status status-closed">Closed</span></div>
+      <div class="eng-jur">Jurisdictions: Pakistan (Sindh, Federal) · UAE</div>
+      <div class="eng-summary">OSINT-based mapping of a network using law enforcement and arms-trade connections to obstruct civil proceedings and coerce witnesses across two countries. A fabricated FIR was identified, forensically documented, and formally challenged through legal counsel. Intelligence package delivered to client's legal team and submitted to an international oversight body. PECA provisions on false instrument deployment documented in the submission.</div>
+      <div class="eng-tags"><span class="eng-tag">OSINT</span><span class="eng-tag">Network Mapping</span><span class="eng-tag">False FIR</span><span class="eng-tag">PECA</span></div>
+    </div>
+    <div class="eng-card">
+      <div class="eng-meta"><span class="eng-id">REF-2024-CA-INT-07</span><span class="eng-status status-ongoing">Ongoing</span></div>
+      <div class="eng-jur">Jurisdictions: Canada (Federal, Ontario, Quebec) · Pakistan · International Consular</div>
+      <div class="eng-summary">Multi-jurisdictional engagement involving documented identity misrepresentation, fraudulent declarations to Canadian government agencies, and cross-border coercion of family members by a network with law enforcement connections. Digital forensics package produced for provincial court proceedings. Regulatory complaints filed with Canadian federal bodies. Active consular file maintained with Global Affairs Canada. Associate legal counsel engaged in two jurisdictions. Cloud and mobile forensics applied to communication evidence.</div>
+      <div class="eng-tags"><span class="eng-tag">Multi-Jurisdiction</span><span class="eng-tag">Identity Fraud</span><span class="eng-tag">Consular</span><span class="eng-tag">Cloud Forensics</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="expertise" id="expertise">
+  <div class="expertise-left">
+    <h2 class="expertise-title">Threat Categories<br><em>We Document</em></h2>
+    <div class="threat-list">
+      <div class="threat-item">
+        <div class="threat-left"><span class="threat-name">Active law enforcement officers conducting unlawful harassment</span><span class="threat-sub">Abuse of institutional authority across international borders — Sindh Police, Punjab Police, federal LEAs</span></div>
+        <span class="threat-tag tag-critical">Critical</span>
+      </div>
+      <div class="threat-item">
+        <div class="threat-left"><span class="threat-name">Cross-border witness and family member coercion</span><span class="threat-sub">Coordinated intimidation of individuals connected to ongoing legal proceedings in Canada</span></div>
+        <span class="threat-tag tag-critical">Critical</span>
+      </div>
+      <div class="threat-item">
+        <div class="threat-left"><span class="threat-name">Fabricated FIRs and false legal instruments</span><span class="threat-sub">Falsified complaints and forged documentation used as instruments of harassment — PECA 2016 s.26-A</span></div>
+        <span class="threat-tag tag-critical">Critical</span>
+      </div>
+      <div class="threat-item">
+        <div class="threat-left"><span class="threat-name">Arms-affiliated network leverage</span><span class="threat-sub">Weapons trade connections and military-adjacent networks used to add coercive weight</span></div>
+        <span class="threat-tag tag-high">High</span>
+      </div>
+      <div class="threat-item">
+        <div class="threat-left"><span class="threat-name">Identity fraud & matrimonial misrepresentation</span><span class="threat-sub">False declarations in marriage records, immigration filings, and government agency submissions</span></div>
+        <span class="threat-tag tag-high">High</span>
+      </div>
+      <div class="threat-item">
+        <div class="threat-left"><span class="threat-name">Fraudulent government and tax declarations</span><span class="threat-sub">False status declarations to CRA and other Canadian federal agencies during active relationships</span></div>
+        <span class="threat-tag tag-high">High</span>
+      </div>
+      <div class="threat-item">
+        <div class="threat-left"><span class="threat-name">Suppression of domestic legal remedies</span><span class="threat-sub">Institutional blocking of complaints — requiring documented argument for international escalation</span></div>
+        <span class="threat-tag tag-high">High</span>
+      </div>
+      <div class="threat-item">
+        <div class="threat-left"><span class="threat-name">Dark web exposure & data compromise</span><span class="threat-sub">Personal and corporate data appearing in closed-source or dark web environments</span></div>
+        <span class="threat-tag tag-active">Active</span>
+      </div>
+    </div>
+  </div>
+  <div class="expertise-right">
+    <div class="er-title">Operational Jurisdictions</div>
+    <div class="geo-list">
+      <div class="geo-item"><div class="geo-dot"></div>Canada — Federal, Ontario & Quebec</div>
+      <div class="geo-item"><div class="geo-dot"></div>Pakistan — Sindh, Punjab, Federal (Islamabad)</div>
+      <div class="geo-item"><div class="geo-dot"></div>United Arab Emirates</div>
+      <div class="geo-item"><div class="geo-dot"></div>United Kingdom</div>
+      <div class="geo-item"><div class="geo-dot"></div>European Union</div>
+      <div class="geo-item"><div class="geo-dot"></div>United States</div>
+    </div>
+    <div class="method-box">
+      <div class="method-label">Methodological Standards</div>
+      <div class="method-list">
+        <div class="method-item">· MITRE ATT&CK threat modelling</div>
+        <div class="method-item">· NIST Cybersecurity Framework</div>
+        <div class="method-item">· OSINT Framework (structured)</div>
+        <div class="method-item">· ISO/IEC 27037 digital evidence handling</div>
+        <div class="method-item">· FATF financial crime guidelines</div>
+        <div class="method-item">· Interpol I-24/7 framework familiarity</div>
+        <div class="method-item">· Blockchain transaction tracing (public)</div>
+        <div class="method-item peca">· PECA 2016 + 2025 Amendments (PK)</div>
+        <div class="method-item peca">· FIA Act 1974 (PK)</div>
+      </div>
+    </div>
+    <div class="method-box">
+      <div class="method-label">Agency Engagement Experience</div>
+      <div class="method-list">
+        <div class="method-item">· RCMP Federal Serious & Organized Crime</div>
+        <div class="method-item">· Global Affairs Canada — Consular Division</div>
+        <div class="method-item">· Prov. Police Complaints Authority (PK)</div>
+        <div class="method-item">· FIA Pakistan — Anti-Corruption Wing</div>
+        <div class="method-item">· FIA Pakistan — Cybercrime Wing</div>
+        <div class="method-item">· Canada Revenue Agency (CRA)</div>
+        <div class="method-item">· IGP Sindh (complaint referral)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-left">
+    <h2 class="contact-title">Begin an<br><em>Engagement</em></h2>
+    <p class="contact-desc">UOGOC does not maintain a public intake process. All consultations begin with a written case summary submitted via secure email. We respond within 72 hours to confirm whether the matter falls within our practice scope.</p>
+    <div class="contact-rows">
+      <div class="contact-row"><span class="c-icon">✉</span>contact@uogoc.com</div>
+      <div class="contact-row"><span class="c-icon">⊕</span>www.uogoc.com</div>
+      <div class="contact-row"><span class="c-icon">◎</span>Toronto, Ontario, Canada</div>
+      <div class="contact-row"><span class="c-icon">◈</span>ProtonMail available for encrypted correspondence</div>
+    </div>
+    <div class="contact-disclaimer">UOGOC does not comment on active or past engagements under any circumstances. We do not issue press statements, grant media interviews, or discuss client matters with third parties. This firm does not solicit general public inquiries. UOGOC is not a law firm and does not provide legal advice or legal representation.</div>
+  </div>
+  <div class="contact-right">
+    <div class="intake-label">Engagement Process</div>
+    <div class="intake-steps">
+      <div class="intake-step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <div class="step-title">Written Case Summary</div>
+          <div class="step-detail">Submit a brief overview by secure email. Include jurisdiction, nature of threat or misconduct, and whether legal counsel is already engaged. We do not conduct initial consultations by telephone.</div>
+        </div>
+      </div>
+      <div class="intake-step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <div class="step-title">Scope Assessment</div>
+          <div class="step-detail">We assess the case against our practice scope within 72 hours. If the matter is outside our areas of operation, we say so clearly. We do not take on cases we are not equipped to handle.</div>
+        </div>
+      </div>
+      <div class="intake-step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <div class="step-title">NDA & Scope Agreement</div>
+          <div class="step-detail">A mutual NDA is executed before any substantive discussion. Deliverables, timeline, and retainer terms are defined in a written scope agreement. No work commences without signatures.</div>
+        </div>
+      </div>
+      <div class="intake-step">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <div class="step-title">Coordinated Operations</div>
+          <div class="step-detail">Forensic, intelligence, and legal-coordination workstreams are sequenced across jurisdictions. All outputs delivered in formats appropriate for the relevant court, agency, or regulatory body.</div>
+        </div>
+      </div>
+    </div>
+    <div class="retainer-note">
+      <strong>Engagement Model</strong>
+      <p>UOGOC operates on a retainer basis. Defined-scope project engagements are considered for specific forensic or advisory mandates. Fees are discussed privately during the NDA phase and are not published.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <div class="footer-logo">UOGOC — Unified Operations Group</div>
+    <div class="footer-reg">Organized Crime & Cybersecurity Consulting · Toronto, Ontario, Canada · Est. 2022</div>
+  </div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Engagement</a>
+    <a href="#">Legal Disclaimer</a>
+  </div>
+  <div class="footer-right">© 2022–2025 UOGOC. All rights reserved.<br>UOGOC is not a law firm. All engagements under NDA.</div>
+</footer>
+
+</body>
+</html>
